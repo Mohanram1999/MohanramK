@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <title>MOHANRAM</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+        <link rel="stylesheet" href="style.css" type="text/css">
+        <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+        
+
+        <script src="jquery code/js/jquery-3.6.0.min.js"></script>
+    </head>
+    <body>
+        <script>
+            $(window).scroll(function() {
+                if ($(this).scrollTop()>10)
+                 {
+                    $('#nav').css('background-color','inherit');
+                 }
+                else
+                 {
+                  $('#nav').css('background-color','unset');
+                 }
+             });
+             $(window).scroll(function() {
+                if ($(this).scrollTop()>150)
+                 {
+                    $('#About').css('box-shadow','0 0 50px');
+                    $('#About').css('background-color','inherit');
+                 }
+                else
+                 {
+                  $('#About').css('box-shadow', 'unset');
+                  $('#About').css('background-color','unset');
+                 }
+             });
+        </script>
+
+        <section id="home" class="home">
+         
+            <!--        NAME        -->
+                <h1>Hello, I am</h1>
+                <div class="txt" id="txt">
+                    <b>M</b><b>O</b><b>H</b><b>A</b><b>N</b><b>R</b><b>A</b><b>M</b>
+                </div>
+            <!--        NAME        -->
+            
+        </section>
+
+        <section id="About" class="about">
+            <!--        WHO & WHAT      -->
+
+            <div class="back">
+                
+            </div>
+
+                <div class="tellme">
+                    <h1>Who am I <br>What I do<br>?</h1>
+                </div>
+            <!--        WHO & WHAT      -->
+        </section>
+        <!--        Navigation      -->
+        <section class="navigation" id="nav">
+            
+            <!--        Modes          -->
+            <div class="modes" id="mode">
+                <span class="dark" id="darkmode" onclick="dark()"><i class='bx bxs-moon'></i></span>
+                <span class="light" id="lightmode" onclick="light()"><i class='bx bxs-sun'></i></span>
+            </div>
+            <script>
+                var mode = document.getElementById("mode");
+                var darkmode = document.getElementById("darkmode");
+                var lightmode = document.getElementById("lightmode");
+
+                function dark(){
+                    document.body.style.backgroundColor = "black";
+                    document.body.style.color = "silver";
+                    darkmode.style.display = "none";
+                    lightmode.style.display = "block";
+                    mode.style.backgroundColor = "silver";
+                    mode.style.boxShadow = "0 0 100px whitesmoke";
+                    navigation.style.backgroundColor = "black";
+                }
+                function light(){
+                    document.body.style.backgroundColor = "whitesmoke";
+                    document.body.style.color = "#262626";
+                    lightmode.style.display = "none";
+                    darkmode.style.display = "block";
+                    mode.style.backgroundColor = "#262626"
+                    mode.style.boxShadow = "0 0 100px #262626"
+                    navigation.style.backgroundColor = "whitesmoke"
+                }
+            </script>
+            <!--        Modes       -->
+
+            <!--        Navbar     -->
+            <nav>
+                <ul id="text">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#About" id="nav1">About</a></li>
+                    <li><a href="#contact" id="nav2">Contact</a></li>
+                </ul>
+                <ul id="icon">
+                    <li><a href="#home"><i class="bx bxs-home"></i></a></li>
+                    <li><a href="#About" id="nav1"><i class="bx bxs-user"></i></a></li>
+                    <li><a href="#contact" id="nav2"><i class="bx bxs-phone"></i></a></li>
+            </ul>
+            </nav>
+            <!--        Navbar     -->
+        </section>      
+        <!--        Navigation      -->
+
+        <footer>
+            <div class="sea">
+                <img id="seaimg" src="images/sea.png">
+                <script>
+                    $(document).ready(function(){
+                        $("#darkmode").click(function(){
+                            $('#seaimg').css("filter","brightness(20%)")
+                        })
+                        $("#lightmode").click(function(){
+                            $('#seaimg').css("filter","brightness(100%)")
+                        })
+                    });
+                </script>
+                <div class="ship" id="ship">
+                    <img src="images/ship.gif">
+                </div>
+            </div>
+        </footer>
+
+    </body>
+</html>
