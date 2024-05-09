@@ -11,7 +11,7 @@ body{
     flex-direction: column;
     height: max-content;
     justify-content: center;
-    overflow: hidden;
+    overflow-x: hidden;
     overflow-y: scroll;
 }
 
@@ -82,7 +82,6 @@ nav #text li a:hover{
     font-size:larger;
     font-weight: bolder;
     text-decoration: underline;
-    text-shadow: 0 0 5px;
 }
 
 nav #icon{
@@ -168,95 +167,73 @@ footer{
 }
 /*      sea and ship     */
 
+
+
 /*      NAME ANIMATION      */
+.vl-home{
+    position: relative;
+    align-items: center;
+    text-align: center;
+    border-left: 2px solid; /* Adjust the color and width as needed */
+    height: 30vh; /* Adjust the height as needed */
+    width: 0; /* Set width to 0 to make it just a line */
+    margin: 0 auto;
+}
 .home{
-    height: 100vh;
+    height: 95vh;
+    font-family: 'Moo Lah Lah',cursive;
 }
 .home h1{
-    margin-top: 35vh;
-    padding-top:0;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-family: 'Moo Lah Lah',cursive;
-    letter-spacing:3.5px;
-    font-size:2.5rem;
-    font-weight:700;
-    position:relative;
+    margin-top: 40vh;
+    padding-top:0 ;
+    text-align: center;
+    font-size: x-large;
+    text-shadow: 2px 2px 0 #666, 4px 4px 0 #777, 6px 6px 0 #888;
 }
-#txt{
-    padding-top:0;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    flex:1;
-    font-family: 'Moo Lah Lah',cursive;
-    letter-spacing:3.5px;
-    font-size:5rem;
-    font-weight:700;
-    position:relative;
-    transform-style:preserve-3d;
-    perspective:100px;
-    -webkit-transform-style:preserve-3d;
-    -webkit-perspective:100px;
- }
- #txt>b{
-    height:5rem;
-    box-shadow:0 .4rem .3rem -.3rem goldenrod;
+.home h1 span{
+    font-variant: small-caps;
+    font-size: 60px;
+    transform: translate(-50%,-50%);
     background: #262626 -webkit-gradient(linear,left top,right top,from(#262626),to(#262626),color-stop(0.5,#fff)) 0 0 no-repeat;
-    background-clip:text;
+    -webkit-background-size:90px;
+    background-size: 90px;
     color: rgba(180, 157, 26, 0.801);
-    -webkit-background-clip:text;
-    transform-origin:bottom;
-    transform:rotateX(0);
-    -webkit-transform-origin:bottom;
-    -webkit-transform:rotateX(0);
-    animation:getUp 7s infinite;
- }
- #txt>b:nth-child(2){
-    animation-delay:.25s;
- }
- #txt>b:nth-child(3){
-    animation-delay:.5s;
- }
- #txt>b:nth-child(4){
-    animation-delay:.75s;
- }
- #txt>b:nth-child(5){
-    animation-delay:1s;
- }
- #txt>b:nth-child(6){
-    animation-delay:1.25s;
- }
- #txt>b:nth-child(7){
-    animation-delay:1.5s;
- }
- #txt>b:nth-child(8){
-    animation-delay:1.75s;
- }
- @keyframes getUp{
-    10%,50%{
-       transform:rotateX(45deg);
+    background-clip: text;
+    -webkit-background-clip: text;
+    animation: animate 5s infinite;
+    text-shadow: none;
+}
+@keyframes animate {
+    0%,10%{
+        background-position: 1000px;
     }
-    0%,60%,100%{
-       transform:rotateX(0);
+    20%{
+        background-position: top left;
     }
- }
-
- @media screen and (max-width:800px) {
-    .hello h1{
-        font-size: larger;
+    90%{
+        background-position: top right;
     }
-    #txt>b{
-        font-size: 50px;
-        height: 3rem;
+    100%{
+        background-position: -1000px;
     }
- }
+}
+@media screen and (max-width:800px) {
+    .home h1{
+        font-size: large;
+    }
+    .home h1 span{
+        font-size: 40px;
+    }
+    .vl-home{
+        height: 40vh;
+    }
+}
 /*      NAME ANIMATION      */
+
+
 
 
 /*      ABOUT       */
-
 .about{
     position: relative;
     width: 100%;
@@ -265,28 +242,58 @@ footer{
     align-items: center;
     transition: 0.5s ease;
 }
+
+/*      WHO & WHAT      */
 .about .tellme{
-    transform:perspective(1000em) rotateX(45deg) rotateZ(50deg);
-    margin-top: 45vh;
-    text-align: center;
-}
-.about .tellme h1{
-    font-family: "Alegreya SC";
-    font-variant: small-caps;
-    font-size:xx-large;
-}
-.about .back{
-    position: absolute;
-    left: 30%;
-    height: 50vh;
-    width: 50vh;
-    transform:perspective(100em) rotateX(50deg) rotateZ(50deg) rotateY(90deg);
-    background-color:seagreen;
-}
-@media screen and (max-width:800px){
-    .about{
-        margin-top: 20vh;
-    }
+    top: 0;
+    margin: 0 auto;
+    width: 100%;
+    transform-style: preserve-3d;
+    transform: perspective(1000em) rotateX(50deg) rotateZ(40deg);
+    font-size: large;
+    font-family:"Allerta Stencil";
+    opacity: 50%;
+    text-shadow: 2px 2px 0;
 }
 
+/*      PHOTO ANIMATION     */
+.about .image_me{
+    position: absolute;
+    background-color: inherit;
+    right: 40%;
+    top: 30%;
+    left: 60%;
+    width: max-content;
+    animation: float 3s ease-in-out infinite;
+}
+.about img{
+    width: 5cm;
+    height: 5cm;
+    border-radius: 100%;
+    border: 2px solid;
+    border-bottom: 20px solid;
+    border-color: inherit;
+    transition: 3s;
+}
+.about img:hover{
+    opacity: 0%;
+    transition: 3s;
+}
+@keyframes float {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+}
+@media screen and (max-width:800px) {
+    .about img{
+        width: 3cm;
+        height: 3cm;
+    }
+}
 /*      ABOUT       */
