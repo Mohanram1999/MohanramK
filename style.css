@@ -70,7 +70,7 @@ nav #text li a{
     text-decoration: none;
     padding-left: 2cm;
     font-weight: bold;
-    font-family: cursive;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 nav ul li #nav1{
     color: unset;
@@ -247,13 +247,14 @@ footer{
 .about .tellme{
     top: 0;
     margin: 0 auto;
-    width: 100%;
+    width: max-content;
+    height: max-content;
     transform-style: preserve-3d;
     transform: perspective(1000em) rotateX(50deg) rotateZ(40deg);
     font-size: large;
     font-family:"Allerta Stencil";
-    opacity: 50%;
-    text-shadow: 2px 2px 0;
+    opacity: 80%;
+    text-shadow: 20px 20px 5px;
 }
 
 /*      PHOTO ANIMATION     */
@@ -290,10 +291,54 @@ footer{
       transform: translateY(0);
     }
 }
+
+/*      ABOUT ME       */
+.about_me{
+    position: absolute;
+    background-color: inherit;
+    width: 50%;
+    top: 30%;
+    left: 15%;
+    height: max-content;
+    width: 60vh;
+    text-align: left;
+}
+.about_me h2{
+    font-family: "Akaya Kanadaka";
+    text-align: center;
+    opacity: 80%;
+}
+.about_me ul {
+    list-style: none;
+} 
+.about_me li {
+    position: relative;
+    padding-left: 25px;
+    font-family: "Dongle";
+    font-size: larger;
+}
+.about_me li::before {
+    content: "<>";
+    font-weight: bolder;
+    position: absolute;
+    left: 0;
+}
+
+.star{
+    font-size: 50px;
+    background-color: inherit;
+    text-shadow: 0 0 10px
+}
+
 @media screen and (max-width:800px) {
     .about img{
         width: 3cm;
         height: 3cm;
+    }
+    .about_me{
+        left: 0;
+        width: 40%;
+        font-size: small;
     }
 }
 /*      ABOUT       */
