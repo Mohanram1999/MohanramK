@@ -13,6 +13,7 @@ body{
     justify-content: center;
     overflow-x: hidden;
     overflow-y: scroll;
+    cursor: pointer;
 }
 
 /*      Navigation      */
@@ -110,7 +111,7 @@ nav #icon li a:hover{
     text-shadow: 0 0 5px;
 }
 
-@media screen and (max-width:600px) {
+@media screen and (max-width:1000px) {
     .modes{
         font-size: 30px;
     }
@@ -160,7 +161,7 @@ footer{
     mix-blend-mode: difference;
 }
 
-@media screen and (max-width:800px) {
+@media screen and (max-width:1000px) {
     .sea #seaimg{
         width: 100%;
     }
@@ -175,9 +176,10 @@ footer{
     align-items: center;
     text-align: center;
     border-left: 2px solid; /* Adjust the color and width as needed */
-    height: 30vh; /* Adjust the height as needed */
+    height: 0vh; /* Adjust the height as needed */
     width: 0; /* Set width to 0 to make it just a line */
     margin: 0 auto;
+    transition: 1s;
 }
 .home{
     height: 95vh;
@@ -203,6 +205,14 @@ footer{
     animation: animate 5s infinite;
     text-shadow: none;
 }
+.home p{
+    text-align: center;
+    font-family: "Allerta Stencil";
+    font-size: xx-small;
+}
+.home p #mouse{
+    font-size: large;
+}
 @keyframes animate {
     0%,10%{
         background-position: 1000px;
@@ -217,15 +227,12 @@ footer{
         background-position: -1000px;
     }
 }
-@media screen and (max-width:800px) {
+@media screen and (max-width:1000px) {
     .home h1{
         font-size: large;
     }
     .home h1 span{
         font-size: 40px;
-    }
-    .vl-home{
-        height: 40vh;
     }
 }
 /*      NAME ANIMATION      */
@@ -234,6 +241,16 @@ footer{
 
 
 /*      ABOUT       */
+.vl-about{
+    position: relative;
+    align-items: center;
+    text-align: center;
+    border-left: 2px solid; /* Adjust the color and width as needed */
+    height: 40vh; /* Adjust the height as needed */
+    width: 0; /* Set width to 0 to make it just a line */
+    margin: 0 auto;
+    transition: 1s;
+}
 .about{
     position: relative;
     width: 100%;
@@ -245,8 +262,7 @@ footer{
 
 /*      WHO & WHAT      */
 .about .tellme{
-    top: 0;
-    margin: 0 auto;
+    margin: 10vh auto;
     width: max-content;
     height: max-content;
     transform-style: preserve-3d;
@@ -262,7 +278,7 @@ footer{
     position: absolute;
     background-color: inherit;
     right: 40%;
-    top: 30%;
+    top: 40%;
     left: 60%;
     width: max-content;
     animation: float 3s ease-in-out infinite;
@@ -302,6 +318,7 @@ footer{
     height: max-content;
     width: 60vh;
     text-align: left;
+    transition: 1s;
 }
 .about_me h2{
     font-family: "Akaya Kanadaka";
@@ -327,10 +344,10 @@ footer{
 .star{
     font-size: 50px;
     background-color: inherit;
-    text-shadow: 0 0 10px
+    transition: 2s;
 }
 
-@media screen and (max-width:800px) {
+@media screen and (max-width:1000px) {
     .about img{
         width: 3cm;
         height: 3cm;
@@ -339,6 +356,9 @@ footer{
         left: 0;
         width: 40%;
         font-size: small;
+    }
+    .about_me li{
+        font-size: x-small;
     }
 }
 /*      ABOUT       */

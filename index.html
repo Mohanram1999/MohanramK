@@ -9,34 +9,22 @@
         <link rel="stylesheet" href="style.css" type="text/css">
         <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
         <script src="jquery code/js/jquery-3.6.0.min.js"></script>
-        <script src="script.js"></script>
 
     </head>
     <body>
-        <script>
-                $(window).scroll(function() {
-                    if ($(this).scrollTop()>10)
-                    {
-                        $('#nav').css('background-color','inherit');
-                    }
-                    else if ($(this).scrollTop()>=50){
-                    }
-                    else
-                    {
-                        $('#nav').css('background-color','unset');
-                    }
-                });         
-        </script>
+        <script src="script.js"></script>
         <section id="home" class="home">
             <!--        NAME        -->
             <h1>Hello, I am<br>
                 <span id="myname">Mohanram</span>
             </h1>
+            <p>SCROLL DOWN<br><i class="bx bxs-mouse" id="mouse"></i></p>
             <!--        NAME        -->
-            <div class="vl-home"></div>
+            <div class="vl-home" id="vl-home"></div>
             
         </section>
 
+        <!--        PHOTO START TRAITS      -->
         <section id="About" class="about">
             <!--        WHO & WHAT      -->
                 <div class="tellme">
@@ -44,18 +32,17 @@
                 </div>
             <!--        WHO & WHAT      -->
 
-            <div class="vl-home" id="vl-about"></div>
+            <div class="vl-about" id="vl-about"></div>
 
-            <div class="star"><p><i class='bx bxs-star' ></i></p></div>
+            <div class="star" id="star"><p><i class='bx bxs-star' ></i></p></div>
 
-            <div class="vl-home" id="vl-about"></div>
 
             <!--        PHOTO ANIMATION     -->
-                <div class="image_me"><img src="images/mohan.jpg"></img></div>
+            <div class="image_me" id="image_me"><img src="images/mohan.jpg"></img></div>
             <!--        PHOTO ANIMATION     -->
 
             <!--        SHORT about me      -->
-                <div class="about_me">
+                <div class="about_me" id="about_me">
                     <h2>Traits and Characteristics</h2>
                     <ul>
                         <li>An innovative individual driven by passion for creating new solutions.</li>
@@ -65,7 +52,12 @@
                 </div>
             <!--        SHORT about me-->
         </section>
+        <!--        PHOTO START TRAITS      -->
 
+        <!--        EDUCATION       -->
+
+        <!--        EDUCATION       -->
+        
 
         <!--        Navigation      -->
         <section class="navigation" id="nav">
@@ -75,30 +67,7 @@
                 <span class="dark" id="darkmode" onclick="dark()"><i class='bx bxs-moon'></i></span>
                 <span class="light" id="lightmode" onclick="light()"><i class='bx bxs-sun'></i></span>
             </div>
-            <script>
-                var mode = document.getElementById("mode");
-                var darkmode = document.getElementById("darkmode");
-                var lightmode = document.getElementById("lightmode");
-
-                function dark(){
-                    document.body.style.backgroundColor = "black";
-                    document.body.style.color = "silver";
-                    darkmode.style.display = "none";
-                    lightmode.style.display = "block";
-                    mode.style.backgroundColor = "silver";
-                    mode.style.boxShadow = "0 0 100px whitesmoke";
-                    navigation.style.backgroundColor = "black";
-                }
-                function light(){
-                    document.body.style.backgroundColor = "whitesmoke";
-                    document.body.style.color = "#262626";
-                    lightmode.style.display = "none";
-                    darkmode.style.display = "block";
-                    mode.style.backgroundColor = "#262626"
-                    mode.style.boxShadow = "0 0 100px #262626"
-                    navigation.style.backgroundColor = "whitesmoke"
-                }
-            </script>
+            <script src="script.js"></script>
             <!--        Modes       -->
 
             <!--        Navbar     -->
@@ -121,16 +90,7 @@
         <footer>
             <div class="sea">
                 <img id="seaimg" src="images/sea.png">
-                <script>
-                    $(document).ready(function(){
-                        $("#darkmode").click(function(){
-                            $('#seaimg').css("filter","brightness(20%)")
-                        })
-                        $("#lightmode").click(function(){
-                            $('#seaimg').css("filter","brightness(100%)")
-                        })
-                    });
-                </script>
+                <script src="script.js"></script>
                 <div class="ship" id="ship">
                     <img src="images/ship.gif">
                 </div>
