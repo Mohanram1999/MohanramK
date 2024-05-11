@@ -25,7 +25,7 @@ body{
     width:100%;
     height: 1.5cm;
     position: fixed;
-    text-align: center;
+    text-align: left;
     background-color:unset;
     box-shadow: unset;
 }
@@ -110,20 +110,6 @@ nav #icon li a:hover{
     font-size: x-large;
     text-shadow: 0 0 5px;
 }
-
-@media screen and (max-width:1000px) {
-    .modes{
-        font-size: 30px;
-    }
-    nav #text{
-        display: none;
-    }
-    nav #icon{
-        display: block;
-        position: sticky;
-    }
-}
-
 /*      Navbar      */
 
 /*      Navigation      */
@@ -161,11 +147,6 @@ footer{
     mix-blend-mode: difference;
 }
 
-@media screen and (max-width:1000px) {
-    .sea #seaimg{
-        width: 100%;
-    }
-}
 /*      sea and ship     */
 
 
@@ -227,18 +208,8 @@ footer{
         background-position: -1000px;
     }
 }
-@media screen and (max-width:1000px) {
-    .home h1{
-        font-size: large;
-    }
-    .home h1 span{
-        font-size: 40px;
-    }
-}
+
 /*      NAME ANIMATION      */
-
-
-
 
 /*      ABOUT       */
 .vl-about{
@@ -246,7 +217,7 @@ footer{
     align-items: center;
     text-align: center;
     border-left: 2px solid; /* Adjust the color and width as needed */
-    height: 40vh; /* Adjust the height as needed */
+    height: 75vh; /* Adjust the height as needed */
     width: 0; /* Set width to 0 to make it just a line */
     margin: 0 auto;
     transition: 1s;
@@ -262,7 +233,7 @@ footer{
 
 /*      WHO & WHAT      */
 .about .tellme{
-    margin: 10vh auto;
+    margin: 0 auto;
     width: max-content;
     height: max-content;
     transform-style: preserve-3d;
@@ -340,14 +311,79 @@ footer{
     position: absolute;
     left: 0;
 }
-
+/*      STAR       */
 .star{
     font-size: 50px;
     background-color: inherit;
     transition: 2s;
 }
 
-@media screen and (max-width:1000px) {
+/*      ABOUT       */
+
+/*      EDUCATION       */
+.education{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+    align-items: center;
+    transition: 0.5s ease;
+}
+.education .book{
+    font-size: xx-large;
+}
+.school{
+    position: absolute;
+    background-color: inherit;
+    width: 50%;
+    top: 0;
+    left: 20%;
+    height: max-content;
+    width: 60vh;
+    text-align: left;
+    transition: 1s;
+    font-size: larger;
+    opacity: 80%;
+}
+.school h2{
+    font-family: "Dongle";
+}
+.school h2 span{
+    font-weight: 900;
+    font-family: "Allerta Stencil";
+}
+/*      EDUCATION       */
+
+@media screen and (max-width:800px) {
+
+    /*      SHIP IMG       */
+    .sea #seaimg{
+        width: 100%;
+    }
+
+    /*      Navigation      */
+    .modes{
+        font-size: 30px;
+    }
+    nav #text{
+        display: none;
+    }
+    nav #icon{
+        display: block;
+        position: sticky;
+    }
+    /*      Navigation      */
+
+    /*      NAME ANIMATION      */
+    .home h1{
+        font-size: large;
+    }
+    .home h1 span{
+        font-size: 40px;
+    }
+    /*      NAME ANIMATION      */
+
+    /*      ABOUT photo,image and char     */
     .about img{
         width: 3cm;
         height: 3cm;
@@ -360,5 +396,14 @@ footer{
     .about_me li{
         font-size: x-small;
     }
+    /*      ABOUT photo,image and char     */
+
+    /*      EDUCATION       */
+    .school{
+        left: 5%;
+        width: 40%;
+        font-size: small;
+    }
+    /*      EDUCATION       */ 
+
 }
-/*      ABOUT       */

@@ -3,10 +3,13 @@ $(window).scroll(function() {
 
     // Adjust navbar and home section
     if (scrollTop > 10) {
-        $('#nav').css('background-color', 'inherit');
-        $('#vl-home').css('height', '35%');
+        $('#nav_con').hide(500);
+        $('#vl-home').css('height', '30%');
+        if (window.matchMedia("(max-width: 1000px)").matches) {
+            $('#vl-home').css('height', '35%');
+        }
     } else {
-        $('#nav').css('background-color', 'unset');
+        $('#nav_con').show(500);
         $('#vl-home').css('height', '0vh');
     }
 
@@ -16,24 +19,44 @@ $(window).scroll(function() {
             'left': '20%',
             'opacity': '0%'
         });
+        $('#vl-about').css({
+            'height' : '0vh'
+        });
     } else {
-        if (window.matchMedia("(max-width: 1000px)").matches) {
-            $('#about_me').css({
-                'left': '0%',
-                'opacity': '100%'
-            });
-        } else {
-            $('#about_me').css({
-                'left': '15%',
-                'opacity': '100%'
-            });
-        }
+        var aboutLeft = window.matchMedia("(max-width: 800px)").matches ? '0%' : '15%';
+        $('#about_me').css({
+            'left': aboutLeft,
+            'opacity': '100%'
+        });
+        $('#vl-about').css({
+            'height' : '75vh'
+        });
     }
-    // Adjust star
-    if (scrollTop > 600) {
-        $('#star').css('text-shadow', '0 0 10px');
+
+    // EDUCATION
+    if (scrollTop < 900) {
+        $('#school').css({
+            'left': '25%',
+            'opacity': '0%'
+        });
+        $('#vl-edu').css({
+            'height' : '0vh'
+        });
+        $('#book').css({
+            'text-shadow' : '0 0 0px'
+        });
     } else {
-        $('#star').css('text-shadow', '0 0 0px');
+        var schoolLeft = window.matchMedia("(max-width: 800px)").matches ? '5%' : '20%';
+        $('#school').css({
+            'left': schoolLeft,
+            'opacity': '100%'
+        });
+        $('#vl-edu').css({
+            'height' : '75vh'
+        });
+        $('#book').css({
+            'text-shadow' : '0 5px 10px'
+        });
     }
 });
 
