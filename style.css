@@ -331,11 +331,11 @@ footer{
 }
 .education .edu-head{
     position: absolute;
-    font-size: x-large;
+    font-size: large;
     top: 0%;
-    left:25%;
+    left:20%;
     font-family: "Nosifer";
-    opacity: 50%;
+    opacity: 30%;
 }
 .education .book{
     font-size: xx-large;
@@ -403,6 +403,14 @@ footer{
 /*      EDUCATION       */
 
 /*      WORK and PROJECT        */
+.work .work-head{
+    position: absolute;
+    font-size: large;
+    top: 0%;
+    right:25%;
+    font-family: "Nosifer";
+    opacity: 30%;
+}
 .work{
     position: relative;
     width: 100%;
@@ -415,6 +423,45 @@ footer{
     font-size: 40px;
     background-color: inherit;
     transition: 2s;
+}
+.lib{
+    position: absolute;
+    background-color: inherit;
+    top: 20%;
+    left: 15%;
+    height: max-content;
+    width: 70vh;
+    text-align: left;
+    transition: 1s;
+    font-size: large;
+    opacity: 90%;
+}
+.lib h2{
+    font-family: "Dongle";
+}
+.lib h2 span{
+    font-weight: 900;
+    font-family: "Allerta Stencil";
+}
+
+.office_1{
+    position: absolute;
+    background-color: inherit;
+    top: 35%;
+    right: 0;
+    height: max-content;
+    width: 80vh;
+    text-align: left;
+    transition: 1s;
+    font-size: larger;
+    opacity: 90%;
+}
+.office_1 h2{
+    font-family: "Dongle";
+}
+.office_1 h2 span{
+    font-weight: 900;
+    font-family: "Allerta Stencil";
 }
 /*      WORK and PROJECT        */
 
@@ -484,5 +531,23 @@ footer{
         font-size: small;
     }
     /*      EDUCATION       */ 
+
+    /*      WORK and PROJECT        */
+    .work .work-head{
+        top: 3%;
+        right: 3%;
+        font-size: small;
+    }
+    .lib{
+        left: 0;
+        width: 40%;
+        font-size: small;
+    }
+    .office_1{
+        right: 0;
+        width: 40%;
+        font-size: small;
+    }
+    /*      WORK and PROJECT        */
 
 }

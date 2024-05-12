@@ -35,7 +35,7 @@ $(window).scroll(function() {
 
     // EDUCATION 
     // SCHOOL
-    if (scrollTop < 950) {
+    if (scrollTop < 900) {
         $('#school').css({
             'right': '20%',
             'opacity': '0%'
@@ -56,11 +56,11 @@ $(window).scroll(function() {
             'height' : '85vh'
         });
         $('#book').css({
-            'text-shadow' : '0 0 5px aqua'
+            'text-shadow' : '0 0 25px aqua'
         });
     }
     //COLLEGE
-    if (scrollTop < 1100) {
+    if (scrollTop < 1200) {
         $('#college').css({
             'left': '20%',
             'opacity': '0%'
@@ -73,8 +73,7 @@ $(window).scroll(function() {
         });
     }
     //Embeddded
-    //COLLEGE
-    if (scrollTop < 1250) {
+    if (scrollTop < 1400) {
         $('#embedded').css({
             'right': '10%',
             'opacity': '0%'
@@ -86,6 +85,52 @@ $(window).scroll(function() {
             'opacity': '90%'
         });
     }
+    // EDUCATION 
+
+    //WORK and PROJECT
+    if (scrollTop < 1600) {
+        $('#case').css({
+            'text-shadow' : '0 0 0px'
+        });
+        $('#vl-work').css({
+            'height' : '0vh'
+        });
+    }
+    else{
+        $('#case').css({
+            'text-shadow' : '0 0 25px aqua'
+        });
+        $('#vl-work').css({
+            'height' : '85vh'
+        });
+    }
+    //LIBRARIAN
+    if (scrollTop < 1700) {
+        $('#lib').css({
+            'left': '20%',
+            'opacity': '0%'
+        });
+    } else {
+        var schoolLeft = window.matchMedia("(max-width: 800px)").matches ? '5%' : '15%';
+        $('#lib').css({
+            'left': schoolLeft,
+            'opacity': '90%'
+        });
+    }
+    //OFFICE_1
+    if (scrollTop < 1800) {
+        $('#office_1').css({
+            'right': '15%',
+            'opacity': '0%'
+        });
+    } else {
+        var schoolRight = window.matchMedia("(max-width: 800px)").matches ? '5%' : '8%';
+        $('#office_1').css({
+            'right': schoolRight,
+            'opacity': '90%'
+        });
+    }
+    //WORK and PROJECT
 });
 
 var mode = document.getElementById("mode");
