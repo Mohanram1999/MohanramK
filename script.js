@@ -5,7 +5,7 @@ $(window).scroll(function() {
     if (scrollTop > 10) {
         $('#nav_con').hide(500);
         $('#vl-home').css('height', '30%');
-        if (window.matchMedia("(max-width: 1000px)").matches) {
+        if (window.matchMedia("(max-width: 800px)").matches) {
             $('#vl-home').css('height', '35%');
         }
     } else {
@@ -33,10 +33,11 @@ $(window).scroll(function() {
         });
     }
 
-    // EDUCATION
-    if (scrollTop < 900) {
+    // EDUCATION 
+    // SCHOOL
+    if (scrollTop < 950) {
         $('#school').css({
-            'left': '25%',
+            'right': '20%',
             'opacity': '0%'
         });
         $('#vl-edu').css({
@@ -46,16 +47,43 @@ $(window).scroll(function() {
             'text-shadow' : '0 0 0px'
         });
     } else {
-        var schoolLeft = window.matchMedia("(max-width: 800px)").matches ? '5%' : '20%';
+        var schoolRight = window.matchMedia("(max-width: 800px)").matches ? '0' : '15%';
         $('#school').css({
-            'left': schoolLeft,
-            'opacity': '100%'
+            'right': schoolRight,
+            'opacity': '90%'
         });
         $('#vl-edu').css({
-            'height' : '75vh'
+            'height' : '85vh'
         });
         $('#book').css({
-            'text-shadow' : '0 5px 10px'
+            'text-shadow' : '0 0 5px aqua'
+        });
+    }
+    //COLLEGE
+    if (scrollTop < 1100) {
+        $('#college').css({
+            'left': '20%',
+            'opacity': '0%'
+        });
+    } else {
+        var schoolLeft = window.matchMedia("(max-width: 800px)").matches ? '5%' : '15%';
+        $('#college').css({
+            'left': schoolLeft,
+            'opacity': '90%'
+        });
+    }
+    //Embeddded
+    //COLLEGE
+    if (scrollTop < 1250) {
+        $('#embedded').css({
+            'right': '10%',
+            'opacity': '0%'
+        });
+    } else {
+        var schoolLeft = window.matchMedia("(max-width: 800px)").matches ? '1%' : '5%';
+        $('#embedded').css({
+            'right': schoolLeft,
+            'opacity': '90%'
         });
     }
 });

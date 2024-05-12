@@ -220,7 +220,7 @@ footer{
     height: 75vh; /* Adjust the height as needed */
     width: 0; /* Set width to 0 to make it just a line */
     margin: 0 auto;
-    transition: 1s;
+    transition: 2s;
 }
 .about{
     position: relative;
@@ -329,6 +329,14 @@ footer{
     align-items: center;
     transition: 0.5s ease;
 }
+.education .edu-head{
+    position: absolute;
+    font-size: x-large;
+    top: 0%;
+    left:25%;
+    font-family: "Nosifer";
+    opacity: 50%;
+}
 .education .book{
     font-size: xx-large;
 }
@@ -337,13 +345,13 @@ footer{
     background-color: inherit;
     width: 50%;
     top: 0;
-    left: 20%;
+    right: 15%;
     height: max-content;
     width: 60vh;
     text-align: left;
     transition: 1s;
     font-size: larger;
-    opacity: 80%;
+    opacity: 90%;
 }
 .school h2{
     font-family: "Dongle";
@@ -352,7 +360,63 @@ footer{
     font-weight: 900;
     font-family: "Allerta Stencil";
 }
+
+.college{
+    position: absolute;
+    background-color: inherit;
+    top: 35%;
+    left: 15%;
+    height: max-content;
+    width: 70vh;
+    text-align: left;
+    transition: 1s;
+    font-size: larger;
+    opacity: 90%;
+}
+.college h2{
+    font-family: "Dongle";
+}
+.college h2 span{
+    font-weight: 900;
+    font-family: "Allerta Stencil";
+}
+
+.embedded{
+    position: absolute;
+    background-color: inherit;
+    top: 60%;
+    right: 5%;
+    height: max-content;
+    width: max-content;
+    text-align: left;
+    transition: 1s;
+    font-size: larger;
+    opacity: 90%;
+}
+.embedded h2{
+    font-family: "Dongle";
+}
+.embedded h2 span{
+    font-weight: 900;
+    font-family: "Allerta Stencil";
+}
 /*      EDUCATION       */
+
+/*      WORK and PROJECT        */
+.work{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+    align-items: center;
+    transition: 0.5s ease;
+}
+.case{
+    font-size: 40px;
+    background-color: inherit;
+    transition: 2s;
+}
+/*      WORK and PROJECT        */
 
 @media screen and (max-width:800px) {
 
@@ -393,14 +457,29 @@ footer{
         width: 40%;
         font-size: small;
     }
-    .about_me li{
-        font-size: x-small;
+    .about_me ul{
+        font-size:10px;
     }
     /*      ABOUT photo,image and char     */
 
     /*      EDUCATION       */
+    .education .edu-head{
+        left: 1%;
+        top: 3%;
+        font-size: small;
+    }
     .school{
-        left: 5%;
+        right: 0;
+        width: 40%;
+        font-size: small;
+    }
+    .college{
+        left: 0;
+        width: 40%;
+        font-size: small;
+    }
+    .embedded{
+        right: 0;
         width: 40%;
         font-size: small;
     }
