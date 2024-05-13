@@ -352,6 +352,7 @@ footer{
     transition: 1s;
     font-size: larger;
     opacity: 90%;
+    overflow-y: scroll;
 }
 .school h2{
     font-family: "Dongle";
@@ -447,7 +448,7 @@ footer{
 .office_1{
     position: absolute;
     background-color: inherit;
-    top: 35%;
+    top: 40%;
     right: 0;
     height: max-content;
     width: 80vh;
@@ -463,7 +464,44 @@ footer{
     font-weight: 900;
     font-family: "Allerta Stencil";
 }
+
+.work .project-head{
+    position: relative;
+    font-size: large;
+    font-family: "Nosifer";
+    opacity: 30%;
+}
+.project{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+    align-items: center;
+    transition: 0.5s ease;
+}
 /*      WORK and PROJECT        */
+
+/*      SKILLS      */
+.skills .skill-head{
+    position: relative;
+    font-size: large;
+    font-family: "Nosifer";
+    opacity: 30%;
+}
+.skills{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+    align-items: center;
+    transition: 0.5s ease;
+}
+.tag{
+    background-color: whitesmoke;
+    color: #262626;
+}
+/*      SKILLS      */
+
 
 @media screen and (max-width:800px) {
 

@@ -35,7 +35,7 @@ $(window).scroll(function() {
 
     // EDUCATION 
     // SCHOOL
-    if (scrollTop < 900) {
+    if (scrollTop < 1000) {
         $('#school').css({
             'right': '20%',
             'opacity': '0%'
@@ -101,7 +101,7 @@ $(window).scroll(function() {
             'text-shadow' : '0 0 25px aqua'
         });
         $('#vl-work').css({
-            'height' : '85vh'
+            'height' : '70vh'
         });
     }
     //LIBRARIAN
@@ -118,7 +118,7 @@ $(window).scroll(function() {
         });
     }
     //OFFICE_1
-    if (scrollTop < 1800) {
+    if (scrollTop < 1850) {
         $('#office_1').css({
             'right': '15%',
             'opacity': '0%'
@@ -144,24 +144,80 @@ function dark(){
     lightmode.style.display = "block";
     mode.style.backgroundColor = "silver";
     mode.style.boxShadow = "0 0 100px whitesmoke";
-    navigation.style.backgroundColor = "black";
 }
 function light(){
     document.body.style.backgroundColor = "whitesmoke";
     document.body.style.color = "#262626";
     lightmode.style.display = "none";
     darkmode.style.display = "block";
-    mode.style.backgroundColor = "#262626"
-    mode.style.boxShadow = "0 0 100px #262626"
-    navigation.style.backgroundColor = "whitesmoke"
+    mode.style.backgroundColor = "#262626";
+    mode.style.boxShadow = "0 0 100px #262626";
 }
 
+$(document).ready(function() {
+    var entries = [
+        { label: 'C-PROGRAMMING' },
+        { label: 'C++' },
+        { label: 'Python' },
+        { label: 'HTML' },
+        { label: 'CSS' },
+        { label: 'JAVASCRIPT' },
+        { label: 'SHELL SCRIPT' },
+        { label: 'YOCTO' },
+        { label: 'RDK-B' }
+    ];
 
-$(document).ready(function(){
-    $("#darkmode").click(function(){
-        $('#seaimg').css("filter","brightness(20%)")
-    })
-    $("#lightmode").click(function(){
-        $('#seaimg').css("filter","brightness(100%)")
-    })
+    var defaultSettings = {
+        entries: entries,
+        width: 600,
+        height: 480,
+        radius: '65%',
+        radiusMin: 75,
+        bgDraw: true,
+        bgColor:'whitesmoke',
+        fontColor: '#262626',
+        opacityOver: 1.00,
+        opacityOut: 0.05,
+        opacitySpeed: 6,
+        fov: 800,
+        speed: 2,
+        fontFamily: 'Dongle',
+        fontSize: '30',
+        fontWeight: 'bold',
+        fontStretch: 'normal',
+        fonttoUppercase: true
+    };
+
+    // Function to initialize the tag cloud with the default settings
+    function initializeTagCloud(settings) {
+        $('#tag').empty(); // Clear any existing tag cloud
+        $('#tag').svg3DTagCloud(settings); // Initialize tag cloud
+    }
+
+    // Function to switch to dark mode
+    function darkMode() {
+        $('#seaimg').css("filter", "brightness(20%)");
+        var $tags = $('#tag').find('text'); // Find the text elements inside the SVG
+        $tags.css('fill', 'whitesmoke'); // Set font color to white
+        defaultSettings.bgColor = 'black'; // Update background color in default settings
+        initializeTagCloud(defaultSettings); // Re-initialize tag cloud with updated settings
+    }
+
+    // Function to switch to light mode
+    function lightMode() {
+        $('#seaimg').css("filter", "brightness(100%)");
+        var $tags = $('#tag').find('text'); // Find the text elements inside the SVG
+        $tags.css('fill', 'black'); // Set font color to black
+        defaultSettings.bgColor = 'whitesmoke'; // Update background color in default settings
+        initializeTagCloud(defaultSettings); // Re-initialize tag cloud with updated settings
+    }
+
+    // Initialize tag cloud with default settings
+    initializeTagCloud(defaultSettings);
+
+    // Event handler for dark mode button
+    $("#darkmode").click(darkMode);
+
+    // Event handler for light mode button
+    $("#lightmode").click(lightMode);
 });
