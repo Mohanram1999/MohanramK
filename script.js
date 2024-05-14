@@ -1,3 +1,16 @@
+$(document).ready(function(){
+    $("#darkmode").click(function(){
+        $('#seaimg').css("filter","brightness(20%)")
+        $('#taglight').css("display","none")
+        $('#tagdark').css("display","block")
+    })
+    $("#lightmode").click(function(){
+        $('#seaimg').css("filter","brightness(100%)")
+         $('#taglight').css("display","block")
+         $('#tagdark').css("display","none")
+    })
+});
+
 $(window).scroll(function() {
     var scrollTop = $(this).scrollTop();
 
@@ -14,7 +27,7 @@ $(window).scroll(function() {
     }
 
     // Adjust about_me section
-    if (scrollTop < 400) {
+    if (scrollTop < 500) {
         $('#about_me').css({
             'left': '20%',
             'opacity': '0%'
@@ -60,7 +73,7 @@ $(window).scroll(function() {
         });
     }
     //COLLEGE
-    if (scrollTop < 1200) {
+    if (scrollTop < 1250) {
         $('#college').css({
             'left': '20%',
             'opacity': '0%'
@@ -73,7 +86,7 @@ $(window).scroll(function() {
         });
     }
     //Embeddded
-    if (scrollTop < 1400) {
+    if (scrollTop < 1450) {
         $('#embedded').css({
             'right': '10%',
             'opacity': '0%'
@@ -88,7 +101,7 @@ $(window).scroll(function() {
     // EDUCATION 
 
     //WORK and PROJECT
-    if (scrollTop < 1600) {
+    if (scrollTop < 1650) {
         $('#case').css({
             'text-shadow' : '0 0 0px'
         });
@@ -105,7 +118,7 @@ $(window).scroll(function() {
         });
     }
     //LIBRARIAN
-    if (scrollTop < 1700) {
+    if (scrollTop < 1850) {
         $('#lib').css({
             'left': '20%',
             'opacity': '0%'
@@ -118,7 +131,7 @@ $(window).scroll(function() {
         });
     }
     //OFFICE_1
-    if (scrollTop < 1850) {
+    if (scrollTop < 2000) {
         $('#office_1').css({
             'right': '15%',
             'opacity': '0%'
@@ -154,70 +167,87 @@ function light(){
     mode.style.boxShadow = "0 0 100px #262626";
 }
 
+//PROJECT SECTION
 $(document).ready(function() {
-    var entries = [
-        { label: 'C-PROGRAMMING' },
-        { label: 'C++' },
-        { label: 'Python' },
-        { label: 'HTML' },
-        { label: 'CSS' },
-        { label: 'JAVASCRIPT' },
-        { label: 'SHELL SCRIPT' },
-        { label: 'YOCTO' },
-        { label: 'RDK-B' }
-    ];
-
-    var defaultSettings = {
-        entries: entries,
-        width: 600,
-        height: 480,
-        radius: '65%',
-        radiusMin: 75,
-        bgDraw: true,
-        bgColor:'whitesmoke',
-        fontColor: '#262626',
-        opacityOver: 1.00,
-        opacityOut: 0.05,
-        opacitySpeed: 6,
-        fov: 800,
-        speed: 2,
-        fontFamily: 'Dongle',
-        fontSize: '30',
-        fontWeight: 'bold',
-        fontStretch: 'normal',
-        fonttoUppercase: true
-    };
-
-    // Function to initialize the tag cloud with the default settings
-    function initializeTagCloud(settings) {
-        $('#tag').empty(); // Clear any existing tag cloud
-        $('#tag').svg3DTagCloud(settings); // Initialize tag cloud
-    }
-
-    // Function to switch to dark mode
-    function darkMode() {
-        $('#seaimg').css("filter", "brightness(20%)");
-        var $tags = $('#tag').find('text'); // Find the text elements inside the SVG
-        $tags.css('fill', 'whitesmoke'); // Set font color to white
-        defaultSettings.bgColor = 'black'; // Update background color in default settings
-        initializeTagCloud(defaultSettings); // Re-initialize tag cloud with updated settings
-    }
-
-    // Function to switch to light mode
-    function lightMode() {
-        $('#seaimg').css("filter", "brightness(100%)");
-        var $tags = $('#tag').find('text'); // Find the text elements inside the SVG
-        $tags.css('fill', 'black'); // Set font color to black
-        defaultSettings.bgColor = 'whitesmoke'; // Update background color in default settings
-        initializeTagCloud(defaultSettings); // Re-initialize tag cloud with updated settings
-    }
-
-    // Initialize tag cloud with default settings
-    initializeTagCloud(defaultSettings);
-
-    // Event handler for dark mode button
-    $("#darkmode").click(darkMode);
-
-    // Event handler for light mode button
-    $("#lightmode").click(lightMode);
+    // Add content to each topic
+    $("#smcc").each(function() {
+        $(this).append('<div class="content-smcc"> hello</div>');
+    });
 });
+
+
+// SKILLS Section SVG ANIMATION
+var tagCloudSettings = {
+    entries: [
+        { label: 'C-PROGRAMMING', url:"https://en.wikipedia.org/wiki/C_(programming_language)" },
+        { label: 'C++', url:"https://en.wikipedia.org/wiki/C++"},
+        { label: 'Python', url:"https://en.wikipedia.org/wiki/Python_(programming_language)" },
+        { label: 'HTML', url:"https://en.wikipedia.org/wiki/HTML" },
+        { label: 'CSS', url:"https://en.wikipedia.org/wiki/CSS" },
+        { label: 'JAVASCRIPT', url:"https://en.wikipedia.org/wiki/JavaScript" },
+        { label: 'SHELL SCRIPT', url:"https://en.wikipedia.org/wiki/Shell_script" },
+        { label: 'YOCTO', url:"https://en.wikipedia.org/wiki/Yocto_Project" },
+        { label: 'RDK-B', url:"https://wiki.rdkcentral.com/" }
+    ],
+    width: 600,
+    height: 480,
+    radius: '65%',
+    radiusMin: 75,
+    bgDraw: true,
+    bgColor: "whitesmoke",
+    fontColor: '#262626',
+    opacityOver: 1.00,
+    opacityOut: 0.05,
+    opacitySpeed: 6,
+    fov: 800,
+    speed: 2,
+    fontFamily: 'Dongle',
+    fontSize: '30',
+    fontWeight: 'bold',
+    fontStretch: 'normal',
+    fonttoUppercase: true
+};
+
+
+// Initialize tag cloud with initial settings
+$(document).ready(function() {
+    $('#taglight').svg3DTagCloud(tagCloudSettings);
+});
+
+var tagdarkSettings = {
+    entries: [
+        { label: 'C-PROGRAMMING', url:"https://en.wikipedia.org/wiki/C_(programming_language)" },
+        { label: 'C++', url:"https://en.wikipedia.org/wiki/C++"},
+        { label: 'Python', url:"https://en.wikipedia.org/wiki/Python_(programming_language)" },
+        { label: 'HTML', url:"https://en.wikipedia.org/wiki/HTML" },
+        { label: 'CSS', url:"https://en.wikipedia.org/wiki/CSS" },
+        { label: 'JAVASCRIPT', url:"https://en.wikipedia.org/wiki/JavaScript" },
+        { label: 'SHELL SCRIPT', url:"https://en.wikipedia.org/wiki/Shell_script" },
+        { label: 'YOCTO', url:"https://en.wikipedia.org/wiki/Yocto_Project" },
+        { label: 'RDK-B', url:"https://wiki.rdkcentral.com/" }
+    ],
+    width: 600,
+    height: 480,
+    radius: '65%',
+    radiusMin: 75,
+    bgDraw: true,
+    bgColor: "black",
+    fontColor: 'whitesmoke',
+    opacityOver: 1.00,
+    opacityOut: 0.05,
+    opacitySpeed: 6,
+    fov: 800,
+    speed: 2,
+    fontFamily: 'Dongle',
+    fontSize: '30',
+    fontWeight: 'bold',
+    fontStretch: 'normal',
+    fonttoUppercase: true
+};
+
+
+// Initialize tag cloud with initial settings
+$(document).ready(function() {
+    $('#tagdark').svg3DTagCloud(tagdarkSettings);
+});
+

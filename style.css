@@ -217,7 +217,6 @@ footer{
     align-items: center;
     text-align: center;
     border-left: 2px solid; /* Adjust the color and width as needed */
-    height: 75vh; /* Adjust the height as needed */
     width: 0; /* Set width to 0 to make it just a line */
     margin: 0 auto;
     transition: 2s;
@@ -352,7 +351,6 @@ footer{
     transition: 1s;
     font-size: larger;
     opacity: 90%;
-    overflow-y: scroll;
 }
 .school h2{
     font-family: "Dongle";
@@ -479,6 +477,51 @@ footer{
     align-items: center;
     transition: 0.5s ease;
 }
+#container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Adjust as needed */
+}
+.topic {
+    width: 40%; /* Adjust as needed */
+    height: 60%; /* Adjust as needed */
+    box-shadow: 0 0 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px 10vh ; /* Adjust as needed */
+    cursor: pointer;
+    transition: transform 0.2s;
+    font-family: "Allerta Stencil";
+    border-radius: 5%;
+    background-color:yellowgreen;
+    color: #262626;
+    font-weight: bolder;
+}
+.topic:hover {
+    transform: scale(1.1); /* Increase size on hover */
+    color: yellowgreen;
+}
+.content-smcc {
+    display: none;
+    position: absolute;
+    font-family: "Dongle";
+    transition: 2s;
+    color: #262626;
+}
+.content-rdkb{
+    display: none;
+    position: absolute;
+    font-family: "Dongle";
+}
+#smcc:hover .content-smcc {
+    display: block;
+    transform: scale(1.1);
+}
+#rdk-b:hover .content-rdkb {
+    display: block;
+}
 /*      WORK and PROJECT        */
 
 /*      SKILLS      */
@@ -486,7 +529,7 @@ footer{
     position: relative;
     font-size: large;
     font-family: "Nosifer";
-    opacity: 30%;
+    opacity: 50%;
 }
 .skills{
     position: relative;
@@ -496,9 +539,15 @@ footer{
     align-items: center;
     transition: 0.5s ease;
 }
-.tag{
-    background-color: whitesmoke;
-    color: #262626;
+.skills .tagdark{
+    display: none;
+    margin: 0 auto;
+    transition:ease-in;
+}
+.skills .taglight{
+    display: block;
+    margin: 0 auto;
+    transition: ease-in;
 }
 /*      SKILLS      */
 
