@@ -1,15 +1,17 @@
-$(document).ready(function(){
-    $("#darkmode").click(function(){
-        $('#seaimg').css("filter","brightness(20%)")
-        $('#taglight').css("display","none")
-        $('#tagdark').css("display","block")
-    })
-    $("#lightmode").click(function(){
-        $('#seaimg').css("filter","brightness(100%)")
-         $('#taglight').css("display","block")
-         $('#tagdark').css("display","none")
-    })
+$(document).ready(function() {
+    $("#darkmode").click(function() {
+        $('#seaimg').css("filter", "brightness(20%)");
+        $('#taglight').css("display", "none");
+        $('#tagdark').css("display", "block");
+    });
+
+    $("#lightmode").click(function() {
+        $('#seaimg').css("filter", "brightness(100%)");
+        $('#taglight').css("display", "block");
+        $('#tagdark').css("display", "none");
+    });
 });
+
 
 $(window).scroll(function() {
     var scrollTop = $(this).scrollTop();
@@ -36,7 +38,7 @@ $(window).scroll(function() {
             'height' : '0vh'
         });
     } else {
-        var aboutLeft = window.matchMedia("(max-width: 800px)").matches ? '0%' : '15%';
+        var aboutLeft = window.matchMedia("(max-width: 800px)").matches ? '0%' : '10%';
         $('#about_me').css({
             'left': aboutLeft,
             'opacity': '100%'
@@ -60,7 +62,7 @@ $(window).scroll(function() {
             'text-shadow' : '0 0 0px'
         });
     } else {
-        var schoolRight = window.matchMedia("(max-width: 800px)").matches ? '0' : '15%';
+        var schoolRight = window.matchMedia("(max-width: 800px)").matches ? '0' : '10%';
         $('#school').css({
             'right': schoolRight,
             'opacity': '90%'
@@ -79,7 +81,7 @@ $(window).scroll(function() {
             'opacity': '0%'
         });
     } else {
-        var schoolLeft = window.matchMedia("(max-width: 800px)").matches ? '5%' : '15%';
+        var schoolLeft = window.matchMedia("(max-width: 800px)").matches ? '5%' : '10%';
         $('#college').css({
             'left': schoolLeft,
             'opacity': '90%'
@@ -124,7 +126,7 @@ $(window).scroll(function() {
             'opacity': '0%'
         });
     } else {
-        var schoolLeft = window.matchMedia("(max-width: 800px)").matches ? '5%' : '15%';
+        var schoolLeft = window.matchMedia("(max-width: 800px)").matches ? '5%' : '10%';
         $('#lib').css({
             'left': schoolLeft,
             'opacity': '90%'
@@ -137,7 +139,7 @@ $(window).scroll(function() {
             'opacity': '0%'
         });
     } else {
-        var schoolRight = window.matchMedia("(max-width: 800px)").matches ? '5%' : '8%';
+        var schoolRight = window.matchMedia("(max-width: 800px)").matches ? '5%' : '5%';
         $('#office_1').css({
             'right': schoolRight,
             'opacity': '90%'
@@ -189,12 +191,12 @@ var tagCloudSettings = {
         { label: 'YOCTO', url:"https://en.wikipedia.org/wiki/Yocto_Project" },
         { label: 'RDK-B', url:"https://wiki.rdkcentral.com/" }
     ],
-    width: 600,
-    height: 480,
+    width: '100%',
+    height: '100%',
     radius: '65%',
     radiusMin: 75,
     bgDraw: true,
-    bgColor: "whitesmoke",
+    bgColor: 'whitesmoke',
     fontColor: '#262626',
     opacityOver: 1.00,
     opacityOut: 0.05,
@@ -226,12 +228,10 @@ var tagdarkSettings = {
         { label: 'YOCTO', url:"https://en.wikipedia.org/wiki/Yocto_Project" },
         { label: 'RDK-B', url:"https://wiki.rdkcentral.com/" }
     ],
-    width: 600,
-    height: 480,
     radius: '65%',
     radiusMin: 75,
     bgDraw: true,
-    bgColor: "black",
+    bgColor: 'black',
     fontColor: 'whitesmoke',
     opacityOver: 1.00,
     opacityOut: 0.05,

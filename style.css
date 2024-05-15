@@ -247,15 +247,15 @@ footer{
 .about .image_me{
     position: absolute;
     background-color: inherit;
-    right: 40%;
-    top: 40%;
-    left: 60%;
+    right: 35%;
+    top: 45%;
+    left: 65%;
     width: max-content;
     animation: float 3s ease-in-out infinite;
 }
 .about img{
-    width: 5cm;
-    height: 5cm;
+    width: 6cm;
+    height: 6cm;
     border-radius: 100%;
     border: 2px solid;
     border-bottom: 20px solid;
@@ -271,7 +271,7 @@ footer{
       transform: translateY(0);
     }
     50% {
-      transform: translateY(-20px);
+      transform: translateY(-40px);
     }
     100% {
       transform: translateY(0);
@@ -283,12 +283,13 @@ footer{
     position: absolute;
     background-color: inherit;
     width: 50%;
-    top: 30%;
-    left: 15%;
+    top: 35%;
+    left: 10%;
     height: max-content;
     width: 60vh;
     text-align: left;
     transition: 1s;
+    font-size: large;
 }
 .about_me h2{
     font-family: "Akaya Kanadaka";
@@ -342,9 +343,8 @@ footer{
 .school{
     position: absolute;
     background-color: inherit;
-    width: 50%;
     top: 0;
-    right: 15%;
+    right: 10%;
     height: max-content;
     width: 60vh;
     text-align: left;
@@ -364,10 +364,10 @@ footer{
     position: absolute;
     background-color: inherit;
     top: 35%;
-    left: 15%;
+    left: 10%;
     height: max-content;
-    width: 70vh;
-    text-align: left;
+    width: 60vh;
+    text-align: right;
     transition: 1s;
     font-size: larger;
     opacity: 90%;
@@ -386,7 +386,7 @@ footer{
     top: 60%;
     right: 5%;
     height: max-content;
-    width: max-content;
+    width: 70vh;
     text-align: left;
     transition: 1s;
     font-size: larger;
@@ -397,6 +397,7 @@ footer{
 }
 .embedded h2 span{
     font-weight: 900;
+    font-size: larger;
     font-family: "Allerta Stencil";
 }
 /*      EDUCATION       */
@@ -427,10 +428,10 @@ footer{
     position: absolute;
     background-color: inherit;
     top: 20%;
-    left: 15%;
+    left: 10%;
     height: max-content;
     width: 70vh;
-    text-align: left;
+    text-align: right;
     transition: 1s;
     font-size: large;
     opacity: 90%;
@@ -582,11 +583,15 @@ footer{
     /*      NAME ANIMATION      */
 
     /*      ABOUT photo,image and char     */
+    .about .image_me{
+        top: 50%;
+    }
     .about img{
         width: 3cm;
         height: 3cm;
     }
     .about_me{
+        top:30%;
         left: 0;
         width: 40%;
         font-size: small;
