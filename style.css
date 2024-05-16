@@ -470,7 +470,7 @@ footer{
     font-family: "Nosifer";
     opacity: 30%;
 }
-.project{
+.projectsec{
     position: relative;
     width: 100%;
     height: 100vh;
@@ -478,55 +478,41 @@ footer{
     align-items: center;
     transition: 0.5s ease;
 }
-#container {
+.project {
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    white-space: nowrap;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh; /* Adjust as needed */
 }
-.topic {
-    width: 40%; /* Adjust as needed */
-    height: 60%; /* Adjust as needed */
-    box-shadow: 0 0 5px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 5px 10vh ; /* Adjust as needed */
+.card {
+    box-shadow: 0px 0px 10px 0px goldenrod;
+    margin: auto 0;
+    width: 50%;
+    height: 60%;
+    margin-left: 10vh;
+    margin-right: 10px;
     cursor: pointer;
-    transition: transform 0.2s;
-    font-family: "Allerta Stencil";
-    border-radius: 5%;
-    background-color:yellowgreen;
-    color: #262626;
-    font-weight: bolder;
-}
-.topic:hover {
-    transform: scale(1.1); /* Increase size on hover */
-    color: yellowgreen;
-}
-.content-smcc {
-    display: none;
-    position: absolute;
-    font-family: "Dongle";
-    transition: 2s;
-    color: #262626;
-}
-.content-rdkb{
-    display: none;
-    position: absolute;
+    display: inline-block;
+    transition: transform 0.3s ease; /* Added transition for smooth movement */
     font-family: "Dongle";
 }
-#smcc:hover .content-smcc {
-    display: block;
-    transform: scale(1.1);
+.card.expanded {
+    width: calc(100% - 20px);
 }
-#rdk-b:hover .content-rdkb {
+.card:hover{
     display: block;
+    position: relative;
+    transition: 1s ease; /* Added transition for smooth scaling */
+    box-shadow: 0px 0px 20px 0px skyblue;
+    width: 80%;
+    height: 60%;
 }
 /*      WORK and PROJECT        */
 
 /*      SKILLS      */
 .skills .skill-head{
+    top: 5vh;
     position: relative;
     font-size: large;
     font-family: "Nosifer";
@@ -639,6 +625,26 @@ footer{
         right: 0;
         width: 40%;
         font-size: small;
+    }
+    .project{
+        overflow: hidden;
+        display: block;
+        align-items: center;
+        height: max-content;
+    }
+    .card{
+        font-size: small;
+        margin: 10px;
+        position: relative;
+        display:block;
+        height: 50vh;
+        width: 95%;
+    }
+    .card:hover{
+        transition: 1s ease; /* Added transition for smooth scaling */
+        box-shadow: 0px 0px 20px 0px skyblue;
+        width: 95%;
+        height: 50vh;
     }
     /*      WORK and PROJECT        */
 

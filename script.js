@@ -103,7 +103,7 @@ $(window).scroll(function() {
     // EDUCATION 
 
     //WORK and PROJECT
-    if (scrollTop < 1650) {
+    if (scrollTop < 1750) {
         $('#case').css({
             'text-shadow' : '0 0 0px'
         });
@@ -251,3 +251,25 @@ $(document).ready(function() {
     $('#tagdark').svg3DTagCloud(tagdarkSettings);
 });
 
+
+$(document).ready(function() {
+    const scrollThresholdStart = 2000;
+    const scrollThresholdEnd = 3000;
+    const $project = $('.project');
+
+    $(window).on('scroll', function() {
+      const scrollTop = $(this).scrollTop();
+
+      if (scrollTop > scrollThresholdStart && scrollTop < scrollThresholdEnd) {
+        const scrollAmount = (scrollTop - scrollThresholdStart) / (scrollThresholdEnd - scrollThresholdStart);
+        let transformValue;
+        if ($(window).width() > 800) {
+          const direction = scrollTop > scrollThresholdStart ? -1 : 1; // Determine direction of scroll
+          transformValue = `translateX(${direction * scrollAmount * 100}px)`; // Adjust the multiplier to control speed
+        } else {
+          transformValue = 'none'; // Reset transform for mobile screens
+        }
+        $('.card').css('transform', transformValue);
+      }
+    });
+});
