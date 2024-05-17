@@ -12,7 +12,7 @@ $(document).ready(function() {
     });
 });
 
-
+//SCROLL ANIMATION
 $(window).scroll(function() {
     var scrollTop = $(this).scrollTop();
     var isNarrowScreen = window.matchMedia("(max-width: 900px)").matches;
@@ -98,6 +98,13 @@ $(window).scroll(function() {
         var officeRight = isNarrowScreen ? '5%' : '5%'; // This condition is redundant, simplified it
         adjustSection('#office_1', { 'right': officeRight, 'opacity': '90%' });
     }
+
+    //CONTACT 
+    if (scrollTop < (3500 + lengtheg * 10) ){
+        adjustSection('#mobile', { 'text-shadow': '0 0 0px' });
+    } else {
+        adjustSection('#mobile', { 'text-shadow': '0 0 25px aqua' });
+    }
 });
 
 
@@ -122,87 +129,59 @@ function light(){
     mode.style.boxShadow = "0 0 100px #262626";
 }
 
-//PROJECT SECTION
-$(document).ready(function() {
-    // Add content to each topic
-    $("#smcc").each(function() {
-        $(this).append('<div class="content-smcc"> hello</div>');
+
+// Common settings for tag cloud
+var commonTagCloudSettings = {
+    entries: [
+        { label: 'C-PROGRAMMING', url: "https://en.wikipedia.org/wiki/C_(programming_language)" },
+        { label: 'C++', url: "https://en.wikipedia.org/wiki/C++" },
+        { label: 'Python', url: "https://en.wikipedia.org/wiki/Python_(programming_language)" },
+        { label: 'HTML', url: "https://en.wikipedia.org/wiki/HTML" },
+        { label: 'CSS', url: "https://en.wikipedia.org/wiki/CSS" },
+        { label: 'JAVASCRIPT', url: "https://en.wikipedia.org/wiki/JavaScript" },
+        { label: 'SHELL SCRIPT', url: "https://en.wikipedia.org/wiki/Shell_script" },
+        { label: 'YOCTO', url: "https://en.wikipedia.org/wiki/Yocto_Project" },
+        { label: 'RDK-B', url: "https://wiki.rdkcentral.com/" },
+        { label: 'LINUX', url: "https://en.wikipedia.org/wiki/Linux" }
+    ],
+    radius: '65%',
+    radiusMin: 75,
+    opacityOver: 1.00,
+    opacityOut: 0.05,
+    opacitySpeed: 6,
+    fov: 800,
+    speed: 1,
+    fontFamily: 'Dongle',
+    fontSize: '30',
+    fontWeight: 'bold',
+    fontStretch: 'normal',
+    fonttoUppercase: true
+};
+
+// Function to initialize tag cloud
+function initializeTagCloud(selector, bgColor, fontColor) {
+    var settings = Object.assign({}, commonTagCloudSettings, {
+        bgDraw: true,
+        bgColor: bgColor,
+        fontColor: fontColor
     });
-});
 
+    if ($(window).width() < 900) {
+        settings.width = '350vh';
+        settings.height = '350vh';
+    } else {
+        settings.width = '500vh';
+        settings.height = '500vh';
+    }
 
-// SKILLS Section SVG ANIMATION
-var tagCloudSettings = {
-    entries: [
-        { label: 'C-PROGRAMMING', url:"https://en.wikipedia.org/wiki/C_(programming_language)" },
-        { label: 'C++', url:"https://en.wikipedia.org/wiki/C++"},
-        { label: 'Python', url:"https://en.wikipedia.org/wiki/Python_(programming_language)" },
-        { label: 'HTML', url:"https://en.wikipedia.org/wiki/HTML" },
-        { label: 'CSS', url:"https://en.wikipedia.org/wiki/CSS" },
-        { label: 'JAVASCRIPT', url:"https://en.wikipedia.org/wiki/JavaScript" },
-        { label: 'SHELL SCRIPT', url:"https://en.wikipedia.org/wiki/Shell_script" },
-        { label: 'YOCTO', url:"https://en.wikipedia.org/wiki/Yocto_Project" },
-        { label: 'RDK-B', url:"https://wiki.rdkcentral.com/" }
-    ],
-    width: '100%',
-    height: '100%',
-    radius: '65%',
-    radiusMin: 75,
-    bgDraw: true,
-    bgColor: 'whitesmoke',
-    fontColor: '#262626',
-    opacityOver: 1.00,
-    opacityOut: 0.05,
-    opacitySpeed: 6,
-    fov: 800,
-    speed: 2,
-    fontFamily: 'Dongle',
-    fontSize: '30',
-    fontWeight: 'bold',
-    fontStretch: 'normal',
-    fonttoUppercase: true
-};
+    $(selector).svg3DTagCloud(settings);
+}
 
-
-// Initialize tag cloud with initial settings
 $(document).ready(function() {
-    $('#taglight').svg3DTagCloud(tagCloudSettings);
+    initializeTagCloud('#taglight', 'whitesmoke', '#262626');
+    initializeTagCloud('#tagdark', 'black', 'whitesmoke');
 });
 
-var tagdarkSettings = {
-    entries: [
-        { label: 'C-PROGRAMMING', url:"https://en.wikipedia.org/wiki/C_(programming_language)" },
-        { label: 'C++', url:"https://en.wikipedia.org/wiki/C++"},
-        { label: 'Python', url:"https://en.wikipedia.org/wiki/Python_(programming_language)" },
-        { label: 'HTML', url:"https://en.wikipedia.org/wiki/HTML" },
-        { label: 'CSS', url:"https://en.wikipedia.org/wiki/CSS" },
-        { label: 'JAVASCRIPT', url:"https://en.wikipedia.org/wiki/JavaScript" },
-        { label: 'SHELL SCRIPT', url:"https://en.wikipedia.org/wiki/Shell_script" },
-        { label: 'YOCTO', url:"https://en.wikipedia.org/wiki/Yocto_Project" },
-        { label: 'RDK-B', url:"https://wiki.rdkcentral.com/" }
-    ],
-    radius: '65%',
-    radiusMin: 75,
-    bgDraw: true,
-    bgColor: 'black',
-    fontColor: 'whitesmoke',
-    opacityOver: 1.00,
-    opacityOut: 0.05,
-    opacitySpeed: 6,
-    fov: 800,
-    speed: 2,
-    fontFamily: 'Dongle',
-    fontSize: '30',
-    fontWeight: 'bold',
-    fontStretch: 'normal',
-    fonttoUppercase: true
-};
-
-
-// Initialize tag cloud with initial settings
-$(document).ready(function() {
-    $('#tagdark').svg3DTagCloud(tagdarkSettings);
-});
 
 
 $(document).ready(function() {

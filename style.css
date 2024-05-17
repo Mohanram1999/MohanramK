@@ -524,20 +524,80 @@ footer{
     height: 100vh;
     text-align: center;
     align-items: center;
-    transition: 0.5s ease;
+    transition: all 2s ease;
 }
 .skills .tagdark{
     display: none;
-    margin: 0 auto;
-    transition:ease-in;
+    margin: 5vh auto;
 }
 .skills .taglight{
     display: block;
-    margin: 0 auto;
-    transition: ease-in;
+    margin: 5vh auto;
 }
 /*      SKILLS      */
 
+/*      CONTACT     */
+.contact .contact-head{
+    width: 50%;
+    position: absolute;
+    font-size: large;
+    top: 1%;
+    font-family: "Nosifer";
+    opacity: 30%;
+    text-align: center;
+}
+.contact{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+    align-items: center;
+}
+.mobile{
+    font-size: 40px;
+    background-color: inherit;
+    transition: 1s;
+}
+#form{
+    margin: 0 auto;
+    margin-top: 20vh;
+    align-items: center;
+    text-align: center;
+    width: 70%;
+    height: 50vh;
+}
+input[type=text],textarea,[type=email]{
+    margin: 10px;
+    background-color: unset;
+    width: 100%;
+    padding: 5px;
+    border: none;
+    border-bottom: 2px solid;
+    border-color:green;
+}
+input[type=text]::placeholder,textarea::placeholder,[type=email]::placeholder{
+    font-family: "Akaya kanadaka";
+    font-variant: small-caps;
+    font-weight: bold;
+    font-size: medium;
+}
+input[type=submit]{
+    background-color: unset;
+    color: green;
+    border:none;
+    cursor: pointer;
+    font-weight: bolder;
+    font-family: "Nosifer";
+    font-size: large;
+}
+input[type=submit]:hover{
+    font-size: larger;
+    transition: 0.5s ease;
+    opacity: 80%;
+    box-shadow: 0px 0px 10px 0px;
+}
+
+/*      CONTACT     */
 
 @media screen and (max-width:800px) {
 
@@ -648,4 +708,23 @@ footer{
     }
     /*      WORK and PROJECT        */
 
+    /*      SKILLS      */
+    .skills{
+        height: 50vh;
+    }
+    /*      SKILLS      */
+
+    /*      CONTACT     */
+    .contact{
+        height: 60vh;
+    }
+    .contact .contact-head{
+        font-size: small;
+        top: 5%;
+        left: 2%;
+    }
+    #form{
+        margin-top: 5vh;
+    }
+    /*      CONTACT     */
 }
