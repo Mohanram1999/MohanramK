@@ -139,8 +139,8 @@ function light(){
     mode.style.boxShadow = "0 0 100px #262626";
 }
 
-
 // Common settings for tag cloud
+
 var commonTagCloudSettings = {
     entries: [
         { label: 'C-PROGRAMMING', url: "https://en.wikipedia.org/wiki/C_(programming_language)" },
@@ -193,7 +193,9 @@ $(document).ready(function() {
     initializeTagCloud('#tagdark', 'none', 'whitesmoke');
 });
 
+// Common settings for tag cloud
 
+// PROJECT PARALLAX
 
 $(document).ready(function() {
     const scrollThresholdStart = 2000;
