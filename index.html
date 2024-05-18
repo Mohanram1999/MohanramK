@@ -29,7 +29,7 @@
         <!--        PHOTO START TRAITS      -->
         <section id="About" class="about">
             <!--        WHO & WHAT      -->
-                <div class="tellme">
+                <div class="tellme" id="tellme">
                     <h1>Who am I <br>What I do<br>?</h1>
                 </div>
             <!--        WHO & WHAT      -->
@@ -134,25 +134,63 @@
             <div class="tagdark" id="tagdark"></div>
         </section>
         <!--        SKILLS      -->
-
+        <br>
+        <br>
         <!--        CONTACT     -->
         <section class="contact" id="contact">
 
             <div class="contact-head"><h1>CONTACT</h1></div>
 
             <div class="mobile" id="mobile"><p><a href="tel:+919080522990" style="color: inherit;"><i class='bx bxs-mobile'></i></a></p></div>
-
+            
             <div id="form">
                 <form method="POST" action="mail.php">
-                    <input type="text" name="name" value="" id="name" placeholder="Name" required autocomplete="username">
-
-                    <input type="email" name="email" value="" id="email" placeholder="E-mail" required autocomplete="email">
-
-                    <textarea name="message" id="message" value="your message for me" placeholder="Your Message for me " required></textarea>
-
+                    <input type="text" name="name" id="name" placeholder="Name" required autocomplete="username">
+                    
+                    <input type="email" name="email" id="email" placeholder="E-mail" required autocomplete="email">
+                    
+                    <textarea name="message" id="message" placeholder="Your Message for me" required></textarea>
+                    
                     <input type="submit" name="submit" value="Send >>>">
                 </form>
-            </div>
+            </div> 
+            
+            <div class="social">
+                <ul>
+                    <li>
+                        <div class="circle">
+                            <a>
+                                <p class="whatsapp"><i class='bx bxl-whatsapp'></i></p>
+                                <div class="wave"></div>
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="circle">
+                            <a>
+                                <p class="instagram"><i class='bx bxl-instagram'></i></p>
+                                <div class="wave"></div>
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="circle">
+                            <a>
+                                <p class="linkedin"><i class='bx bxl-linkedin-square'></i></p>
+                                <div class="wave"></div>
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="circle">
+                            <a>
+                                <p class="cellphome"><i class='bx bxs-user-voice'></i></p>
+                                <div class="wave"></div>
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+            </div>           
         </section>
 
         <!--        CONTACT     -->

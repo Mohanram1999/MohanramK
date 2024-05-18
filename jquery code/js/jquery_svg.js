@@ -233,7 +233,7 @@ THE SOFTWARE.
             radius:"70%",
             radiusMin:75,
             bgDraw:!0,
-            bgColor:"#000",
+            bgColor:"none",
             opacityOver:1,
             opacityOut:.05,
             opacitySpeed:6,

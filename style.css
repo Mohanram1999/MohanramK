@@ -559,12 +559,15 @@ footer{
     transition: 1s;
 }
 #form{
-    margin: 0 auto;
-    margin-top: 20vh;
+    float: right;
+    padding: 5vh;
+    padding-right: 10vh;
+    padding-bottom: 0;
+    margin-top: 5vh;
     align-items: center;
     text-align: center;
-    width: 70%;
-    height: 50vh;
+    width: 40%;
+    height: 40vh;
 }
 input[type=text],textarea,[type=email]{
     margin: 10px;
@@ -594,9 +597,67 @@ input[type=submit]:hover{
     font-size: larger;
     transition: 0.5s ease;
     opacity: 80%;
-    box-shadow: 0px 0px 10px 0px;
 }
 
+.social{
+    position: absolute;
+    float: left;
+    width: 50%;
+    text-align: center;
+}
+.social ul li{
+    list-style: none;
+    display:inline-flex;
+    padding: 0 10vh;
+    padding-left: 0;
+}
+.circle {
+    margin: 10px;
+    position: relative;
+    width: 3cm;
+    height: 3cm;
+    border: 5px solid transparent; /* This helps avoid double border color specification */
+    border-bottom-color: initial; /* If you need a specific color, you can set it here */
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
+    
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    backface-visibility: hidden; /* Standard property */
+    
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0); /* Standard property */
+}
+.circle p{
+    font-size:xx-large;
+}
+.wave {
+    top: 60%;
+    font-family: cursive;
+    background-color: #3f68c5;
+    position: absolute;
+    height: 200%;
+    width: 200%;
+    left: -50%;
+    border-radius: 38%;
+    transform: rotate(360deg);
+    transition: all 5s ease;
+    animation: wave 50s linear infinite;
+}
+@keyframes wave {
+    0%{transform: rotate(0deg);}
+    100%{transform: rotate(3600deg);}
+}
+.circle:hover .wave{
+    top: 0%;
+}
 /*      CONTACT     */
 
 @media screen and (max-width:800px) {
@@ -716,7 +777,7 @@ input[type=submit]:hover{
 
     /*      CONTACT     */
     .contact{
-        height: 60vh;
+        height: 100vh;
     }
     .contact .contact-head{
         font-size: small;
@@ -725,6 +786,26 @@ input[type=submit]:hover{
     }
     #form{
         margin-top: 5vh;
+        float: none;
+        margin: 0 auto;
+        width: 60%;
+        height: 50vh;
+    }
+    .social{
+        top: 50%;
+        position: absolute;
+        margin-top: 0;
+        width: 95%;
+    }
+    .social ul li{
+        margin: 0;
+        padding: 0;
+        display:inline-flex;
+    }
+    .circle{
+        float: none;
+        width: 3cm;
+        height: 3cm;
     }
     /*      CONTACT     */
 }

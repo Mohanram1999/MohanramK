@@ -12,19 +12,28 @@ $(document).ready(function() {
     });
 });
 
-//SCROLL ANIMATION
+
 $(window).scroll(function() {
     var scrollTop = $(this).scrollTop();
     var isNarrowScreen = window.matchMedia("(max-width: 900px)").matches;
-    var lengtheg = 0;
-    if(isNarrowScreen){
-        lengtheg = 100;
-    }
+    var lengtheg = isNarrowScreen ? 100 : 100;
 
     // Helper function to adjust sections
     function adjustSection(selector, props) {
         $(selector).css(props);
     }
+
+    // Get offset top positions of sections
+    var navConTop = $('#nav_con').offset().top;
+    var homeTop = $('#vl-home').offset().top;
+    var aboutMeTop = $('#tellme').offset().top;
+    var schoolTop = $('#school').offset().top;
+    var collegeTop = $('#college').offset().top;
+    var embeddedTop = $('#embedded').offset().top;
+    var caseTop = $('#case').offset().top;
+    var libTop = $('#lib').offset().top;
+    var officeTop = $('#office_1').offset().top;
+    var mobileTop = $('#mobile').offset().top;
 
     // Adjust navbar and home section
     if (scrollTop > 10) {
@@ -36,7 +45,7 @@ $(window).scroll(function() {
     }
 
     // Adjust about_me section
-    if (scrollTop < 500 + lengtheg) {
+    if (scrollTop < aboutMeTop - lengtheg) {
         adjustSection('#about_me', { 'left': '20%', 'opacity': '0%' });
         adjustSection('#vl-about', { 'height': '0vh' });
     } else {
@@ -47,7 +56,7 @@ $(window).scroll(function() {
 
     // EDUCATION 
     // SCHOOL
-    if (scrollTop < (1000 + lengtheg * 2)) {
+    if (scrollTop < schoolTop - lengtheg * 2) {
         adjustSection('#school', { 'right': '20%', 'opacity': '0%' });
         adjustSection('#vl-edu', { 'height': '0vh' });
         adjustSection('#book', { 'text-shadow': '0 0 0px' });
@@ -59,7 +68,7 @@ $(window).scroll(function() {
     }
 
     // COLLEGE
-    if (scrollTop < (1250 + lengtheg * 2)) {
+    if (scrollTop < collegeTop - lengtheg * 2) {
         adjustSection('#college', { 'left': '20%', 'opacity': '0%' });
     } else {
         var collegeLeft = isNarrowScreen ? '5%' : '10%';
@@ -67,7 +76,7 @@ $(window).scroll(function() {
     }
 
     // EMBEDDED
-    if (scrollTop < (1450 + lengtheg * 2)) {
+    if (scrollTop < embeddedTop - lengtheg * 2) {
         adjustSection('#embedded', { 'right': '10%', 'opacity': '0%' });
     } else {
         var embeddedRight = isNarrowScreen ? '1%' : '5%';
@@ -75,7 +84,7 @@ $(window).scroll(function() {
     }
 
     // WORK and PROJECT
-    if (scrollTop < (1750 + lengtheg * 3) ){
+    if (scrollTop < caseTop - lengtheg * 2) {
         adjustSection('#case', { 'text-shadow': '0 0 0px' });
         adjustSection('#vl-work', { 'height': '0vh' });
     } else {
@@ -84,7 +93,7 @@ $(window).scroll(function() {
     }
 
     // LIBRARIAN
-    if (scrollTop < (1850 + lengtheg * 3) ){
+    if (scrollTop < libTop - lengtheg * 2) {
         adjustSection('#lib', { 'left': '20%', 'opacity': '0%' });
     } else {
         var libLeft = isNarrowScreen ? '5%' : '10%';
@@ -92,20 +101,21 @@ $(window).scroll(function() {
     }
 
     // OFFICE_1
-    if (scrollTop < (2000 + lengtheg * 3)) {
+    if (scrollTop < officeTop - lengtheg * 2) {
         adjustSection('#office_1', { 'right': '15%', 'opacity': '0%' });
     } else {
         var officeRight = isNarrowScreen ? '5%' : '5%'; // This condition is redundant, simplified it
         adjustSection('#office_1', { 'right': officeRight, 'opacity': '90%' });
     }
 
-    //CONTACT 
-    if (scrollTop < (3500 + lengtheg * 10) ){
+    // CONTACT 
+    if (scrollTop < mobileTop - lengtheg * 2) {
         adjustSection('#mobile', { 'text-shadow': '0 0 0px' });
     } else {
         adjustSection('#mobile', { 'text-shadow': '0 0 25px aqua' });
     }
 });
+
 
 
 var mode = document.getElementById("mode");
@@ -139,6 +149,7 @@ var commonTagCloudSettings = {
         { label: 'HTML', url: "https://en.wikipedia.org/wiki/HTML" },
         { label: 'CSS', url: "https://en.wikipedia.org/wiki/CSS" },
         { label: 'JAVASCRIPT', url: "https://en.wikipedia.org/wiki/JavaScript" },
+        { label: 'JQuery', url: "https://en.wikipedia.org/wiki/JQuery" },
         { label: 'SHELL SCRIPT', url: "https://en.wikipedia.org/wiki/Shell_script" },
         { label: 'YOCTO', url: "https://en.wikipedia.org/wiki/Yocto_Project" },
         { label: 'RDK-B', url: "https://wiki.rdkcentral.com/" },
@@ -178,8 +189,8 @@ function initializeTagCloud(selector, bgColor, fontColor) {
 }
 
 $(document).ready(function() {
-    initializeTagCloud('#taglight', 'whitesmoke', '#262626');
-    initializeTagCloud('#tagdark', 'black', 'whitesmoke');
+    initializeTagCloud('#taglight', 'none', '#262626');
+    initializeTagCloud('#tagdark', 'none', 'whitesmoke');
 });
 
 
