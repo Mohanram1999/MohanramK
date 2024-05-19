@@ -195,26 +195,64 @@ $(document).ready(function() {
 
 // Common settings for tag cloud
 
-// PROJECT PARALLAX
+// PROJECT 
 
-$(document).ready(function() {
-    const scrollThresholdStart = 2000;
-    const scrollThresholdEnd = 3000;
-    const $project = $('.project');
+document.addEventListener("DOMContentLoaded", () => {
+    const sliderTrack = document.querySelector('.slider-track');
+    const sliderItems = document.querySelectorAll('.slider-item');
+    const prevButton = document.getElementById('prev');
+    const nextButton = document.getElementById('next');
+    const totalItems = sliderItems.length;
+    let currentIndex = 0;
 
-    $(window).on('scroll', function() {
-      const scrollTop = $(this).scrollTop();
+    const updateSlider = () => {
+      const slideWidth = sliderItems[0].offsetWidth+20;
+      const newTransform = -currentIndex * slideWidth;
+      gsap.to(sliderTrack, { x: newTransform, duration: 0.5, ease: 'power2.inOut' });
+    };
 
-      if (scrollTop > scrollThresholdStart && scrollTop < scrollThresholdEnd) {
-        const scrollAmount = (scrollTop - scrollThresholdStart) / (scrollThresholdEnd - scrollThresholdStart);
-        let transformValue;
-        if ($(window).width() > 800) {
-          const direction = scrollTop > scrollThresholdStart ? -1 : 1; // Determine direction of scroll
-          transformValue = `translateX(${direction * scrollAmount * 100}px)`; // Adjust the multiplier to control speed
-        } else {
-          transformValue = 'none'; // Reset transform for mobile screens
-        }
-        $('.card').css('transform', transformValue);
+    nextButton.addEventListener('click', () => {
+      currentIndex = (currentIndex + 1) % totalItems;
+      updateSlider();
+    });
+
+    prevButton.addEventListener('click', () => {
+      currentIndex = (currentIndex - 1 + totalItems) % totalItems;
+      updateSlider();
+    });
+
+    let startX = 0;
+    let isDragging = false;
+
+    sliderTrack.addEventListener('touchstart', (e) => {
+      isDragging = true;
+      startX = e.touches[0].clientX;
+    });
+
+    sliderTrack.addEventListener('touchmove', (e) => {
+      if (!isDragging) return;
+      const diffX = e.touches[0].clientX - startX;
+      if (diffX > 50) {
+        currentIndex = (currentIndex - 1 + totalItems) % totalItems;
+        updateSlider();
+        isDragging = false;
+      } else if (diffX < -50) {
+        currentIndex = (currentIndex + 1) % totalItems;
+        updateSlider();
+        isDragging = false;
       }
     });
+
+    sliderTrack.addEventListener('touchend', () => {
+      isDragging = false;
+    });
+
+    window.addEventListener('resize', updateSlider);
 });
+  
+
+$(".option").click(function(){
+    $(".option").removeClass("active");
+    $(this).addClass("active");
+    
+}); 

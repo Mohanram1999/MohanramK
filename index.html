@@ -112,21 +112,58 @@
 
         <section class="projectsec" id="projectsec">
             <script src="script.js"></script>
-            <div class="project">
-                <div class="card">
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/gsap.min.js"></script>
+
+            <div class="options">
+                <div class="option active" style="--optionBackground:url(https://66.media.tumblr.com/6fb397d822f4f9f4596dff2085b18f2e/tumblr_nzsvb4p6xS1qho82wo1_1280.jpg);">
+                   <div class="shadow"></div>
+                   <div class="label">
+                      <div class="icon">
+                         <i class="fas fa-walking"></i>
+                      </div>
+                      <div class="info">
+                         <div class="main">Blonkisoaz</div>
+                         <div class="sub">Omuke trughte a otufta</div>
+                      </div>
+                   </div>
+                </div>
+                <div class="option" style="--optionBackground:url(https://66.media.tumblr.com/8b69cdde47aa952e4176b4200052abf4/tumblr_o51p7mFFF21qho82wo1_1280.jpg);">
+                   <div class="shadow"></div>
+                   <div class="label">
+                      <div class="icon">
+                         <i class="fas fa-snowflake"></i>
+                      </div>
+                      <div class="info">
+                         <div class="main">Oretemauw</div>
+                         <div class="sub">Omuke trughte a otufta</div>
+                      </div>
+                   </div>
+                </div>
+            </div>
+            
+            <div class="slider-container">
+                <div class="slider-track">
+                  <div class="slider-item">
                     <h2>SOLAR MPPT CHARGE CONTROLLER</h2>
                     <p>
                         <ul>
-                            <li>A Solar MPPT (Maximum Power Point Tracking) charge controller is an advanced device used in solar power systems to optimize the power output from solar panels. By constantly monitoring and adjusting the electrical operating point of the panels, it ensures they operate at their maximum power point. This enhances the efficiency of the energy transfer to the batteries, leading to faster and more efficient charging compared to traditional charge controllers.</li>
+                            <li>
+                                 -- A Solar MPPT (Maximum Power Point Tracking) charge controller is an advanced device used in solar power systems to optimize the power output from solar panels. By constantly monitoring and adjusting the electrical operating point of the panels, it ensures they operate at their maximum power point. This enhances the efficiency of the energy transfer to the batteries, leading to faster and more efficient charging compared to traditional charge controllers.
+                            </li>
                             <li>
                                 In our project, we developed a voltage regulator circuit that utilizes solar input to provide a consistent 12V output for charging batteries, regardless of fluctuations in solar input. We employed the LM2576HV in a buck converter circuit for voltage regulation. The circuit incorporates voltage and current sensors to monitor values, which are displayed on an LCD screen. An Arduino and ESP8288 module capture these sensor readings and transmit them to the cloud for analysis when required. Additionally, a relay is utilized to safeguard the battery against overcharging.
                             </li>
                         </ul>
                     </p>
-                    <h3>In the project, my responsibility involved designing the circuit using MATLAB and verifying its functionality with varying voltages. Additionally, I utilized Proteus to validate the embedded code for Arduino, ensuring that the LCD display accurately presented the sensor readings.</h3>
+                  </div>
+                  <div class="slider-item">2</div>
+                  <div class="slider-item">3</div>
+                  <div class="slider-item">4</div>
+                  <div class="slider-item">5</div>
                 </div>
-                <div class="card">
-                  <h2>ORION PLATFORM RDK-B BROADBAND</h2>
+                <div class="slider-controls">
+                  <button class="slider-button" id="prev">Prev</button>
+                  <button class="slider-button" id="next">Next</button>
                 </div>
             </div>
         </section>
