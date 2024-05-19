@@ -195,8 +195,7 @@ $(document).ready(function() {
 
 // Common settings for tag cloud
 
-// PROJECT 
-
+// PROJECT FOR MOBILE
 document.addEventListener("DOMContentLoaded", () => {
     const sliderTrack = document.querySelector('.slider-track');
     const sliderItems = document.querySelectorAll('.slider-item');
@@ -250,7 +249,7 @@ document.addEventListener("DOMContentLoaded", () => {
     window.addEventListener('resize', updateSlider);
 });
   
-
+//PROJECT FOR LARGE WINDOW
 $(".option").click(function(){
     $(".option").removeClass("active");
     $(this).addClass("active");
